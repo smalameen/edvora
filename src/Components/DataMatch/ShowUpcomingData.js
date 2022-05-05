@@ -12,7 +12,7 @@ const ShowUpcomingData = ({ obj }) => {
 
   return (
     <div class="row d-flex justify-content-around">
-            <h1> upcoming</h1>
+    
       {previousData > todayData && (
         <Card
           value={obj.state}

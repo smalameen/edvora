@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from 'react'
 import * as ReactDOM from 'react-dom'
 import './App.css'
-import Home from './Components/Filterbar/Home'
+import Home from './Components/HomeAndFilter/Home'
 export const UserContext = createContext()
 export const DataContext = createContext()
 

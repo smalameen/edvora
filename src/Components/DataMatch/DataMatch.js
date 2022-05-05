@@ -4,7 +4,7 @@ import { DataContext, UserContext } from '../../App'
 import ShowNearData from './ShowNearData'
 import ShowPastRide from './ShowPastRide'
 import ShowUpcomingData from './ShowUpcomingData'
-import "../Filterbar/Filter.css"
+import "../HomeAndFilter/Filter.css"
 
 const DataMatch = ({ stateData, data2, cityData, mainData }) => {
   const [user, steUser] = useContext(UserContext)
