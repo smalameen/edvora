@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext, useEffect, useState } from 'react'
+import * as ReactDOM from 'react-dom'
+import './App.css'
+import Home from './Components/Filterbar/Home'
+export const UserContext = createContext()
+export const DataContext = createContext()
 
 function App() {
+  const [user, setUser] = useState([])
+  useEffect(() => {
+    fetch('https://assessment.api.vweb.app/user')
+      .then((response) => response.json())
+      .then((data) => setUser(data))
+  }, [])
+
+  const [itemes, setItemes] = useState([])
+  useEffect(() => {
+    fetch('https://assessment.api.vweb.app/rides')
+      .then((response) => response.json())
+      .then((data1) => setItemes(Object.values(data1)))
+  }, [])
+
+
+
+ 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <DataContext.Provider value={[itemes, setItemes]}>
+      <UserContext.Provider value={[user, setUser]}>
+        <Home />
+      </UserContext.Provider>
+    </DataContext.Provider>
+  )
 }
 
-export default App;
+export default App
