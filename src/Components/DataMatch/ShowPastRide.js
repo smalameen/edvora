@@ -12,7 +12,7 @@ const ShowPastRide = ({ obj }) => {
   return (
     <div>
       <div class="row d-flex justify-content-around">
-        
+      <h1> past</h1>
         {previousData < todayData && (
           <Card
             value={obj.state}

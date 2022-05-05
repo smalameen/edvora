@@ -67,7 +67,7 @@ const DataMatch = ({ stateData, data2, cityData, mainData }) => {
 
         <div class="row d-flex justify-content-around">
           {count1 === 0 &&
-            count2 === 0 &&
+            count2 === 0 && count !== 0 &&
             cityData.length === 0 &&
             stateData.length === 0 && (
               <tbody>
@@ -104,6 +104,9 @@ const DataMatch = ({ stateData, data2, cityData, mainData }) => {
               </tbody>
             )}
         </div>
+
+
+
         {/* Showing Filter Data */}
         <div class="row d-flex justify-content-between">
           {/* One data Matched */}

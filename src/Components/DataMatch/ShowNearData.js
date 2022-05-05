@@ -20,6 +20,7 @@ const ShowDataNew = ({ obj }) => {
 
   return (
     <div class="row d-flex justify-content-around">
+      <h1>Near File</h1>
       {closest === user.station_code && (
         <Card
           value={obj.state}
